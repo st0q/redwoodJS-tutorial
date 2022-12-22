@@ -6,6 +6,9 @@ export const QUERY = gql`
   query ArticlesQuery {
     articles: posts {
       id
+      title
+      body
+      createdAt
     }
   }
 `
