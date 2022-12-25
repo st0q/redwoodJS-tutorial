@@ -1,5 +1,6 @@
 import {
   Form,
+  Label,
   FieldError,
   TextField,
   TextAreaField,
@@ -24,17 +25,35 @@ const ContactPage = () => {
       <MetaTags title="Contact" description="Contact page" />
 
       <Form onSubmit={onSubmit}>
-        <label htmlFor="name">Name</label>
-        <TextField name="name" validation={{ required: true }} />
-        <FieldError name="name" />
+        <Label name="name" errorClassName="error">
+          Name
+        </Label>
+        <TextField
+          name="name"
+          validation={{ required: true }}
+          errorClassName="error"
+        />
+        <FieldError name="name" className="error" />
 
-        <label htmlFor="email">Email</label>
-        <TextField name="email" validation={{ required: true }} />
-        <FieldError name="email" />
+        <Label name="email" errorClassName="error">
+          Email
+        </Label>
+        <TextField
+          name="email"
+          validation={{ required: true }}
+          errorClassName="error"
+        />
+        <FieldError name="email" className="error" />
 
-        <label htmlFor="message">Message</label>
-        <TextAreaField name="message" validation={{ required: true }} />
-        <FieldError name="message" />
+        <Label name="message" errorClassName="error">
+          Message
+        </Label>
+        <TextAreaField
+          name="message"
+          validation={{ required: true }}
+          errorClassName="error"
+        />
+        <FieldError name="message" className="error" />
 
         <Submit>Save</Submit>
       </Form>
