@@ -40,7 +40,13 @@ const ContactPage = () => {
         </Label>
         <TextField
           name="email"
-          validation={{ required: true }}
+          validation={{
+            required: true,
+            pattern: {
+              value: /^[^@]+@[^.]+\..+$/,
+              message: 'Please enter a valid email address',
+            },
+          }}
           errorClassName="error"
         />
         <FieldError name="email" className="error" />
