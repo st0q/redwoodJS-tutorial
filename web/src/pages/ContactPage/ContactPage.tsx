@@ -7,6 +7,7 @@ import {
   Form,
   Label,
   FieldError,
+  FormError,
   TextField,
   TextAreaField,
   Submit,
@@ -48,7 +49,8 @@ const ContactPage = () => {
       <MetaTags title="Contact" description="Contact page" />
 
       <Toaster />
-      <Form onSubmit={onSubmit} config={{ mode: 'onBlur' }}>
+      <Form onSubmit={onSubmit} config={{ mode: 'onBlur' }} error={error}>
+        <FormError error={error} wrapperClassName="form-error" />
         <Label name="name" errorClassName="error">
           Name
         </Label>
